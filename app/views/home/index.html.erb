@@ -1,0 +1,10 @@
+<div>
+  <h1 class="font-bold text-4xl">ToDo List</h1>
+  <%= turbo_frame_tag 'new_todo' do %>
+    <%= render partial: 'todos/form', locals: { todo: Todo.new } %>
+  <% end %>
+  <%= turbo_stream_from 'todos_stream' %>
+  <%= turbo_frame_tag 'todos_list' do %>
+    <%= render 'todos/list', todos: @todos %>
+  <% end %>
+</div>
