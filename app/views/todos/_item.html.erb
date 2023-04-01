@@ -1,3 +1,6 @@
 <%= turbo_frame_tag "todo_#{todo.id}" do %>
   <p><%= link_to todo.name, edit_todo_path(todo.id) %></p>
+  <%= turbo_frame_tag "todo_status_#{todo.id}" do %>
+
+  <% end %>
 <% end %>

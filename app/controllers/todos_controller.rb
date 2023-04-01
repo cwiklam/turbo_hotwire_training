@@ -1,6 +1,7 @@
 class TodosController < ApplicationController
   def edit
     @todo = Todo.find(params[:id])
+    Turbo::StreamsChannel.broadcast_replace_to 'todos_stream', target: "todo_status_#{@todo.id}", partial: 'todos/status'
   end
 
   def update
