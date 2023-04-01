@@ -1,5 +1,4 @@
 <%#= turbo_frame_tag 'new_todo' do %>
-  <%#= render 'todos/form' %>
+<%#= render 'todos/form' %>
 <%# end %>
-<%#= turbo_stream.replace 'new_todo', partial: 'todos/form', locals: {todo: Todo.new} %>
-<%#= turbo_stream.append 'todos_list', partial: 'todos/item', locals: { todo: @todo } %>
+<%= turbo_stream.replace 'new_todo', partial: 'todos/form', locals: { todo: Todo.new, frame_id: 'new_todo' } %>
