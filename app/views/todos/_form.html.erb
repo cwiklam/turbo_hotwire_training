@@ -1,4 +1,6 @@
-<%= form_with model: todo do |form| %>
-  <%= form.text_field :name %>
-  <%= form.submit todo.id ? :update : :add, class: 'bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded' %>
+<%= turbo_frame_tag frame_id do %>
+  <%= form_with model: todo do |form| %>
+    <%= form.text_field :name %>
+    <%= form.submit todo.id ? :update : :add, class: 'bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded' %>
+  <% end %>
 <% end %>
